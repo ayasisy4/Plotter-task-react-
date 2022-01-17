@@ -9,7 +9,17 @@ function Container (props) {
     canDrop: () => true,
     drop: item => {
       if (isOverCurrent) {
-        setBoxes([...boxes, item]);
+        setBoxes([...boxes, item.name]);
+        if(props.datasourcetype === 'dimension'){
+            props.onadd(item.name)
+ 
+        }
+        else{
+            props.onadd([...boxes,item.name])
+        }
+     
+        console.log("thissssssss is item",item)
+
       }
     },
     collect: monitor => ({
@@ -17,18 +27,27 @@ function Container (props) {
       isOverCurrent: monitor.isOver({ shallow: true })
     })
   });
+  let clear = (e) => {
+    e.preventDefault();
+    setBoxes([])
+  }
+
+  console.log('this is boxess',boxes)
 
   return (
     <div className='container'>
         <p>{props.datasourcetype}</p>
       {boxes.map(member => (
           <div className="box">
-            {member.name}
+            {member}
           </div>
       ))}
       <div className={`drop-area ${canDrop ? 'highlight': ''}`} ref={drop}>
         Drag here
       </div>
+      <button
+          onClick={(e)=>clear(e)}
+          >clear</button>
     </div>
   );
 }
