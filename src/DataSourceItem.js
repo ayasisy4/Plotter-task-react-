@@ -1,18 +1,26 @@
 import React from 'react'
-// import { useDrag } from 'react-dnd';
+import { useDrag } from 'react-dnd';
 
 
+const DATASOURCEITEM = 'DataSourceItem';
 
-class DataSourceItem extends React.Component{
+function DataSourceItem (props) {
+    
+    console.log("this is naaaameeee",props.item)
 
-    render() {
+    const [, drag] = useDrag({
+        type: props.item.function,
+            item: () => (props.item)
+      });
+
         return (
-            <li key={this.props.id} className="datasource" >
+            <li key={props.item.name} className="datasource" ref={drag} >
 
-             <p> {this.props.name} </p>
+
+             <p> {props.item.name} </p>
             </li>
           );
         }
-    }
+
 
 export default DataSourceItem
