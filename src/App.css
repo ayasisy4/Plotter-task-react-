@@ -27,7 +27,41 @@
 .App-link {
   color: #61dafb;
 }
+.app-wrapper {
+  display: flex;
+}
+.container {
+  width: 100%;
+  /* height: 400px; */
+  padding: 16px;
+  border: 2px solid black;
+}
 
+.datasource {
+  list-style: none;
+  padding-left: 0;
+}
+.column li{
+  width: 250px;
+  padding:  17px;
+  border: 1 px solid black;
+
+}
+
+.datasource li {
+  display: flex;
+  align-items: center;
+  border: solid 2px black;
+  border-radius: .2em;
+  padding: .5em .8em .5em .5em;
+  margin-bottom: 1em;
+}
+
+.datasource p {
+  max-width: none;
+  font-weight: bold;
+  margin: 0;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
