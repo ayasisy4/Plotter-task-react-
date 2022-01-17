@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from "react";
+import * as DataAPI from "./DataAPI.js"
 import './App.css';
+import ColumnList from "./ColumnList";
+import Container from "./container.js";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+function PlotterApp() {
+  const [columns, setColumns] = useState([]);
+
+  useEffect(() => 
+    DataAPI.getAllColumns().then( res=>{
+      setColumns(res);
+  }),[]);
+
+  console.log(columns)
+
+    return ( 
+      <div className="app-wrapper">  
+        
+         <ColumnList datasources = {columns} />
+         <Container/>
+        
+      </div> 
+    ); 
 }
-
-export default App;
+export default PlotterApp;
