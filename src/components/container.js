@@ -34,19 +34,16 @@ function Container(props) {
   };
 
   return (
-    <div >
+    <div key = {props.datasourcetype}>
       <p>{props.datasourcetype}</p>
-      <div  className={`${canDrop ? "highlight" : ""}`} ref={drop}
-        style={{
-          display: "flex",
-          border: "1px solid black",
-          width: "100%",
-          justifyContent: "space-between",
-        }}
+      <div 
+      className={`card ${canDrop ? "highlight" : ""}`}
+       ref={drop}
+   
       >
          <div style={{ display: "flex",flexWrap:'wrap' }}>
-          {boxes.map((member) => (
-            <div className="box">{member}</div>
+          {boxes.map((member,indx) => (
+            <div key={indx} className="box">{member}</div>
           ))}
         </div>
         <button onClick={(e) => clear(e)} className="button">

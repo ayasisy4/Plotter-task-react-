@@ -27,13 +27,13 @@ function PlotterApp() {
 <DndProvider backend={HTML5Backend}>
       <div className="app-wrapper">
         <ColumnList datasources={columns} />
-        <div>
-        <div className="column">
-          <Container datasourcetype={"dimension"} onadd={setDimension} />
-          <Container datasourcetype={"measure"} onadd={setMeasures} />
-        </div>
+        <div className="sub-wrapper">
+        
+          <Container key= "dimension" datasourcetype={"dimension"} onadd={setDimension} />
+          <Container key = "measure" datasourcetype={"measure"} onadd={setMeasures} />
+       
         <p>Plot</p>
-        <div className="container ">
+        <div className="graph ">
           {dimension && measures && <LineChart measures={measures} dimension={dimension} />}
         </div>
         </div>

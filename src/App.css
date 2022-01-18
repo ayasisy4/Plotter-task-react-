@@ -29,9 +29,17 @@
   color: #61dafb;
 }
 .app-wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  /* display: flex;
   align-items: center;
-  border: lawngreen;
+  border: lawngreen; */
+}
+.sub-wrapper{
+  grid-column: span 3 /span 4;
+  text-align: center;
+  width: 100%;
+  max-width: 601px;
 }
 .container {
   width: 100%;
@@ -101,8 +109,8 @@
   width: 550px;
 }
 
-.container {
-  width: 400px;
+.graph {
+  
   padding: 16px;
   border: 1px solid black;
 }
@@ -149,17 +157,18 @@
   border: 2px solid red; */
 }
 .card {
-  display: "flex";
-  justify-content: "space-between";
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   border: 1px solid rgb(98, 70, 108);
+  margin: 0px;
 }
 .smallcard {
-  display: "flex";
-  flex-wrap: "wrap";
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .button {
-  position: "relative";
-  right: "0";
+  position: relative;
+  right: 0;
 }
