@@ -1,7 +1,6 @@
 import React from "react";
 import "../App.css";
 import DataSourceItem from "./DataSourceItem";
-import { useDrag } from "react-dnd";
 
 function ColumnList(props) {
   return (
