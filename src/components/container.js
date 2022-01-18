@@ -44,7 +44,7 @@ function Container(props) {
           justifyContent: "space-between",
         }}
       >
-        <div className="smallcard">
+         <div style={{ display: "flex",flexWrap:'wrap' }}>
           {boxes.map((member) => (
             <div className="box">{member}</div>
           ))}
