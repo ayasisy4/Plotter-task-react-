@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import * as DataAPI from "./APIS/DataAPI.js";
 import "./App.css";
 import ColumnList from "./Components/ColumnList";
-import ListTools from "./Components/ColumnList";
 import Container from "./Components/container.js";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
