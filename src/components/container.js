@@ -34,9 +34,9 @@ function Container(props) {
   };
 
   return (
-    <div className={`${canDrop ? "highlight" : ""}`} ref={drop}>
+    <div >
       <p>{props.datasourcetype}</p>
-      <div
+      <div  className={`${canDrop ? "highlight" : ""}`} ref={drop}
         style={{
           display: "flex",
           border: "1px solid black",

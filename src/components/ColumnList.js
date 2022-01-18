@@ -4,7 +4,7 @@ import DataSourceItem from "./DataSourceItem";
 
 function ColumnList(props) {
   return (
-    <div className="column">
+    <div className="tool-wrapper">
       <h1>Data sources</h1>
       <ul className="datasource">
         {props.datasources.map((datasource) => (

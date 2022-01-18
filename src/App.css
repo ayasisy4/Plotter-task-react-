@@ -30,6 +30,8 @@
 }
 .app-wrapper {
   display: flex;
+  align-items: center;
+  border: lawngreen;
 }
 .container {
   width: 100%;
