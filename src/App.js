@@ -32,6 +32,7 @@ function PlotterApp() {
           <Container datasourcetype={"dimension"} onadd={setDimension} />
           <Container datasourcetype={"measure"} onadd={setMeasures} />
         </div>
+        <p>Plot</p>
         <div className="container ">
           {dimension && measures && <LineChart measures={measures} dimension={dimension} />}
         </div>
